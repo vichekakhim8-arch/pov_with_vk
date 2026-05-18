@@ -1,11 +1,6 @@
 <template>
-  <h1>Booking</h1>
+  <Booking/>
 </template>
-
 <script setup>
-
+  import Booking from '../components/booking/booking.vue'
 </script>
-
-<style>
-
-</style>

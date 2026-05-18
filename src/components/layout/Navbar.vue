@@ -120,6 +120,11 @@ const navLinks = [
     name: 'Hotels',
     path: '/hotels'
   },
+
+  {
+    name: 'About',
+    path: '/about'
+  },
   
   {
     name: 'Dashboard',

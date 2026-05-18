@@ -47,110 +47,129 @@
 
   <!-- body -->
 
-  <div class="w-[90%] mx-auto flex gap-6 p-6">
+ <div class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 p-4 lg:p-6">
 
-    <!-- FILTER SIDEBAR -->
-    <div class="w-[240px] flex-shrink-0">
-      <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm sticky top-6">
-        <h2 class="text-xl font-serif font-medium mb-5">Filters</h2>
-        <!-- PRICE -->
-        <p class="text-xs uppercase tracking-widest text-gray-400 mb-3">Price Range</p>
-        <div class="flex flex-col gap-2 mb-4">
-          <label><input type="radio" value="" v-model="price" /> All</label>
-          <label><input type="radio" value="low" v-model="price" /> Under $150</label>
-          <label><input type="radio" value="mid" v-model="price" /> $150 - $200</label>
-          <label><input type="radio" value="high" v-model="price" /> $200+</label>
-        </div>
+  <!-- FILTER SIDEBAR -->
+  <div class="w-full lg:w-[240px] flex-shrink-0">
 
-        <hr class="my-4" />
+    <div class="bg-white p-4 sm:p-5 rounded-2xl border shadow-sm sticky top-4">
 
-        <!-- RATING -->
-        <p class="text-xs uppercase tracking-widest text-gray-400 mb-3">Rating</p>
-        <div class="flex flex-col gap-2 mb-4">
-          <label><input type="radio" value="all" v-model="rating" /> All</label>
-          <label><input type="radio" value="4" v-model="rating" /> 4★+</label>
-          <label><input type="radio" value="4.5" v-model="rating" /> 4.5★+</label>
-        </div>
+      <h2 class="text-lg sm:text-xl font-serif font-medium mb-5">
+        Filters
+      </h2>
 
-        <hr class="my-4" />
+      <!-- PRICE -->
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-3">
+        Price Range
+      </p>
 
-        <!-- SORT -->
-        <p class="text-xs uppercase tracking-widest text-gray-400 mb-3">Sort</p>
-        <select v-model="sort" class="w-full border p-2 rounded-xl mb-4">
-          <option value="">Default</option>
-          <option value="priceLow">Price Low → High</option>
-          <option value="priceHigh">Price High → Low</option>
-          <option value="rating">Rating</option>
-        </select>
-
-        <button
-          @click="clearFilters"
-          class="w-full border text-gray-500 py-2 rounded-xl hover:bg-gray-50"
-        >
-          Clear Filters
-        </button>
-
+      <div class="grid grid-cols-2 lg:grid-cols-1 gap-2 mb-4 text-sm">
+        <label><input type="radio" value="" v-model="price" /> All</label>
+        <label><input type="radio" value="low" v-model="price" /> Under $150</label>
+        <label><input type="radio" value="mid" v-model="price" /> $150 - $200</label>
+        <label><input type="radio" value="high" v-model="price" /> $200+</label>
       </div>
+
+      <hr class="my-4" />
+
+      <!-- RATING -->
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-3">
+        Rating
+      </p>
+
+      <div class="grid grid-cols-2 lg:grid-cols-1 gap-2 mb-4 text-sm">
+        <label><input type="radio" value="all" v-model="rating" /> All</label>
+        <label><input type="radio" value="4" v-model="rating" /> 4★+</label>
+        <label><input type="radio" value="4.5" v-model="rating" /> 4.5★+</label>
+      </div>
+
+      <hr class="my-4" />
+
+      <!-- SORT -->
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-3">
+        Sort
+      </p>
+
+      <select v-model="sort" class="w-full border p-2 rounded-xl mb-4 text-sm">
+        <option value="">Default</option>
+        <option value="priceLow">Price Low → High</option>
+        <option value="priceHigh">Price High → Low</option>
+        <option value="rating">Rating</option>
+      </select>
+
+      <button
+        @click="clearFilters"
+        class="w-full border text-gray-500 py-2 rounded-xl hover:bg-gray-50 text-sm"
+      >
+        Clear Filters
+      </button>
+
     </div>
+  </div>
 
-   <!-- HOTELS -->
-<div class="flex-1 min-w-0">
-  <p class="text-gray-500 text-sm mb-4">
-    {{ filteredHotels.length }} hotels found
-  </p>
+  <!-- HOTELS -->
+  <div class="flex-1 min-w-0">
 
-  <!-- GRID -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    
-    <div
-      v-for="hotel in filteredHotels"
-      :key="hotel.id"
-      class="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition duration-300"
-    >
-      
-      <!-- IMAGE -->
-      <div class="relative overflow-hidden">
-        <img
-          :src="hotel.image"
-          class="h-48 w-full object-cover group-hover:scale-110 transition duration-500"
-        />
+    <p class="text-gray-500 text-sm mb-4">
+      {{ filteredHotels.length }} hotels found
+    </p>
 
-        <!-- rating badge -->
-        <div class="absolute top-3 right-3 bg-white/90 text-xs px-2 py-1 rounded-full shadow">
-          ⭐ {{ hotel.rating }}
+    <!-- GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+
+      <div
+        v-for="hotel in filteredHotels"
+        :key="hotel.id"
+        class="group bg-white rounded-2xl overflow-hidden border shadow-sm hover:shadow-xl transition"
+      >
+
+        <!-- IMAGE -->
+        <div class="relative overflow-hidden">
+          <img
+            :src="hotel.image"
+            class="h-40 sm:h-48 w-full object-cover group-hover:scale-110 transition duration-500"
+          />
+
+          <div class="absolute top-3 right-3 bg-white/90 text-xs px-2 py-1 rounded-full shadow">
+            ⭐ {{ hotel.rating }}
+          </div>
         </div>
-      </div>
 
-      <!-- CONTENT -->
-      <div class="p-4 space-y-1">
-        <h2 class="font-semibold text-gray-900 text-base truncate">
-          {{ hotel.name }}
-        </h2>
+        <!-- CONTENT -->
+        <div class="p-4 space-y-1">
 
-        <p class="text-xs text-gray-400 flex items-center gap-1">
-          📍 {{ hotel.location }}
-        </p>
+          <h2 class="font-semibold text-gray-900 text-sm sm:text-base truncate">
+            {{ hotel.name }}
+          </h2>
 
-        <div class="flex items-center justify-between mt-3">
-          <p class="text-blue-600 font-bold">
-            ${{ hotel.price }} <span class="text-gray-400 text-xs">/ night</span>
+          <p class="text-xs text-gray-400 flex items-center gap-1">
+            📍 {{ hotel.location }}
           </p>
 
-          <router-link
-  :to="{ name: 'hotel-detail', params: { id: hotel.id } }"
-  class="text-sm px-3 py-1 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
->
-  View
-</router-link>
+          <div class="flex items-center justify-between mt-3">
+
+            <p class="text-blue-600 font-bold text-sm sm:text-base">
+              ${{ hotel.price }}
+              <span class="text-gray-400 text-xs">/ night</span>
+            </p>
+
+            <router-link
+              :to="{ name: 'hotel-detail', params: { id: hotel.id } }"
+              class="text-xs sm:text-sm px-3 py-1 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
+            >
+              View
+            </router-link>
+
+          </div>
+
         </div>
+
       </div>
 
     </div>
-
   </div>
+
 </div>
-
-  </div>
 </template>
 
 <script setup>

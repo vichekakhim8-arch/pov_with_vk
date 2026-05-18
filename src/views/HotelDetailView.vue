@@ -106,17 +106,14 @@
   </div>
 
   <!-- buttons -->
-  <button
-    class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold shadow-md transition"
-  >
-    Book Now
-  </button>
+ <router-link
+  to="/booking"
+  class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold shadow-md transition"
+>
+  Book Now
+</router-link>
 
-  <button
-    class="w-full mt-3 border border-gray-200 hover:bg-gray-50 py-3 rounded-xl text-gray-700 transition"
-  >
-    ❤️ Save to Wishlist
-  </button>
+ 
 
 </div>>
 
