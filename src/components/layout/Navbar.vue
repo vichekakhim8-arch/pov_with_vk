@@ -1,4 +1,3 @@
-<!-- src/components/layout/Navbar.vue -->
 
 <template>
   <nav class="bg-white shadow-md sticky top-0 z-50">
