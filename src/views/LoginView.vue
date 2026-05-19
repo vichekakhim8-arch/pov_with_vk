@@ -1,18 +1,16 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
 
-    <!-- BORDER WRAPPER -->
     <div class="relative w-full max-w-md rounded-2xl p-[2px] overflow-hidden">
 
-      <!-- ANIMATED BORDER -->
-      <div class=" absolute -inset-0 animate-spin-slow bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 "></div>
+      <div class=" absolute -inset-10 animate-spin-slow bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 "></div>
 
       <!-- LOGIN CARD -->
-      <div class="relative bg-white rounded-2xl p-8">
+      <div class="relative bg-white rounded-2xl p-8 ">
 
         <!-- TITLE -->
-        <h1 class="text-3xl font-bold text-center text-blue-600">
-          HotelBooker
+        <h1 class="text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
+        Login
         </h1>
 
         <p class="text-center text-gray-500 mt-2">
@@ -33,7 +31,7 @@
 
               <!-- ICON -->
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                📧
+                
               </span>
 
               <input
@@ -67,7 +65,7 @@
 
               <!-- ICON -->
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                🔒
+                
               </span>
 
               <input

@@ -8,7 +8,7 @@
 
         <!-- IMAGE -->
         <img
-          src="https://i.pravatar.cc/150?img=12"
+          src="/src/assets/image/logohotel.png"
           class="w-24 h-24 rounded-full object-cover border"
           alt="profile"
         />
@@ -16,7 +16,7 @@
         <!-- INFO -->
         <div>
           <h1 class="text-2xl font-bold text-gray-900">
-            Hotel Booking Project
+            Skywayhotel Booking System
           </h1>
 
           <p class="text-gray-500">
@@ -31,18 +31,23 @@
       </div>
 
       <!-- ABOUT -->
-      <div class="bg-white p-6 rounded-2xl border shadow-sm">
+      <div class="bg-white p-6 rounded-2xl  shadow-lg">
         <h2 class="text-xl font-semibold mb-3">About This Project</h2>
 
         <p class="text-gray-600 leading-relaxed">
-          This Hotel Booking system is a web application designed to help users
-          search, view, and book hotel rooms easily. The system includes booking
-          management, dashboard control, and payment UI simulation.
+      
+
+        This SkywayHotel system is a web application designed for easy hotel room search and booking.
+        It allows users to view available rooms and make bookings quickly and efficiently.
+        The system includes a dashboard for managing bookings and user data.
+        It also provides a simple payment UI simulation for a smooth user experience.
+        Overall, it helps improve hotel reservation management in a modern and user-friendly way.
+                
         </p>
       </div>
 
       <!-- FEATURES -->
-      <div class="bg-white p-6 rounded-2xl border shadow-sm">
+      <div class="bg-white p-6 rounded-2xl shadow-lg">
         <h2 class="text-xl font-semibold mb-4">Features</h2>
 
         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700">
@@ -56,7 +61,7 @@
       </div>
 
       <!-- TECH STACK -->
-      <div class="bg-white p-6 rounded-2xl border shadow-sm">
+      <div class="bg-white p-6 rounded-2xl shadow-lg">
         <h2 class="text-xl font-semibold mb-4">Tech Stack</h2>
 
         <div class="flex flex-wrap gap-3">
@@ -80,7 +85,8 @@
 
       <!-- FOOTER -->
       <div class="text-center text-gray-400 text-sm">
-        © 2026 Hotel Booking System — Made for learning purpose
+        © 2026 Skywayhotel Booking System. All rights reserved.  
+        Made for learning purpose | Developed by<span class="hover:text-blue-700 transition-all duration-200 hover:underline"> Vicheka & Sery Pov</span> 
       </div>
 
     </div>
