@@ -5,13 +5,14 @@
     <div class="relative w-full max-w-md rounded-2xl p-[2px] overflow-hidden">
 
       <!-- ANIMATED BORDER -->
-      <div class="absolute  inset-10 animate-spin-slow bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+      <div class="absolute  -inset-15 animate-spin-slow bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
 
       <!-- REGISTER CARD -->
       <div class="relative bg-white rounded-2xl p-8">
 
         <!-- TITLE -->
-        <h1 class="text-3xl font-bold text-center text-blue-600">
+      
+        <h1 class="text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
           Create Account
         </h1>
 
@@ -32,7 +33,7 @@
             <div class="relative mt-1">
 
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                👤
+                
               </span>
 
               <input
@@ -64,7 +65,7 @@
             <div class="relative mt-1">
 
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                📧
+                
               </span>
 
               <input
@@ -96,7 +97,7 @@
             <div class="relative mt-1">
 
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                🔒
+                
               </span>
 
               <input
@@ -128,7 +129,7 @@
             <div class="relative mt-1">
 
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                🔑
+                
               </span>
 
               <input
@@ -157,6 +158,18 @@
           >
             Register
           </button>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
+
+          <button class="w-full sm:w-auto border py-2 px-7 rounded-sm hover:bg-gray-50 transition">
+            Google Account
+          </button>
+
+          <button class="w-full sm:w-auto bg-blue-500 py-2 px-7 rounded-sm text-white hover:bg-blue-600 transition">
+            Facebook Account
+          </button>
+
+</div>
 
         </form>
 
