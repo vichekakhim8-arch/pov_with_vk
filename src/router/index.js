@@ -9,6 +9,7 @@ import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import DashboardView from '../views/DashboardView.vue'
 import AboutView from '../views/AboutView.vue'
+import ContactView from '../views/ContactView.vue'
 
 const routes = [
   {
@@ -63,7 +64,15 @@ const routes = [
     path: '/about',
     name: 'about',
     component: AboutView
+  },
+  
+  {
+    path: '/contact',
+    name: 'contact',
+    component: ContactView
+
   }
+  
 ]
 
 const router = createRouter({

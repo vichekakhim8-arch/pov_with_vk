@@ -129,6 +129,11 @@ const navLinks = [
   {
     name: 'Dashboard',
     path: '/dashboard'
+  },
+
+  {
+    name: 'Contact',
+    path: '/contact'
   }
 ]
 

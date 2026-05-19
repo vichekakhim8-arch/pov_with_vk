@@ -65,7 +65,7 @@
     <div class="bg-white p-6 rounded-2xl shadow-sm">
       <h2 class="text-xl font-semibold mb-4">Amenities</h2>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <div class="grid  md:grid-cols-2 lg:grid-cols-2 gap-3">
         <div
           v-for="(item, i) in hotel.amenities"
           :key="i"
@@ -165,35 +165,99 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { computed, ref } from "vue"
+import { useRoute } from "vue-router"
 
-/* HOTEL DATA */
-const hotel = ref({
-  name: "Sunset Luxury Resort",
-  location: "Phnom Penh, Cambodia",
-  rating: 4.7,
-  price: 120,
-  image: "",
-  description:
-    "A beautiful luxury hotel with ocean view, modern rooms, and excellent service. Perfect for vacation and relaxation.",
-  amenities: [
-    "Free WiFi",
-    "Swimming Pool",
-    "Breakfast Included",
-    "Air Conditioning",
-    "24/7 Reception",
-    "Gym"
-  ]
+/* ROUTE */
+const route = useRoute()
+
+/* HOTELS DATA */
+const hotels = [
+  {
+    id: 1,
+    name: "Sunset Luxury Resort",
+    location: "Phnom Penh, Cambodia",
+    rating: 4.7,
+    price: 120,
+
+    description:
+      "A beautiful luxury hotel with ocean view, modern rooms, and excellent service. Perfect for vacation and relaxation.",
+
+    amenities: [
+      "Free WiFi",
+      "Swimming Pool",
+      "Breakfast Included",
+      "Air Conditioning",
+      "24/7 Reception",
+      "Gym"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+      "https://images.unsplash.com/photo-1501117716987-c8e1ecb210c7",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4"
+    ]
+  },
+
+  {
+    id: 2,
+    name: "Ocean Paradise Hotel",
+    location: "Siem Reap, Cambodia",
+    rating: 4.9,
+    price: 180,
+
+    description:
+      "Luxury stay near Angkor Wat with premium rooms and amazing swimming pool.",
+
+    amenities: [
+      "Spa",
+      "Free Breakfast",
+      "Airport Pickup",
+      "Gym",
+      "Free WiFi",
+      "Bar"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1501117716987-c8e1ecb210c7",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945"
+    ]
+  },
+
+  {
+    id: 3,
+    name: "Luxury Beach Resort",
+    location: "Sihanoukville, Cambodia",
+    rating: 4.5,
+    price: 95,
+
+    description:
+      "Relaxing beach hotel with sea view and modern luxury rooms.",
+
+    amenities: [
+      "Beach Access",
+      "Restaurant",
+      "Free WiFi",
+      "Swimming Pool",
+      "Parking",
+      "Room Service"
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+      "https://images.unsplash.com/photo-1501117716987-c8e1ecb210c7"
+    ]
+  }
+]
+
+/* GET HOTEL BY ID */
+const hotel = computed(() => {
+  return hotels.find(h => h.id == route.params.id)
 })
 
 /* IMAGE GALLERY */
-const images = ref([
-  "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-  "https://images.unsplash.com/photo-1501117716987-c8e1ecb210c7",
-  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4"
-])
-
-const selectedImage = ref(images.value[0])
-
-
+const selectedImage = ref(hotel.value.images[0])
+const images = ref(hotel.value.images)
 </script>
