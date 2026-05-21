@@ -4,7 +4,7 @@
     <!-- Background Image -->
     <div
       class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80');"
+      style="background-image: url('/src/assets/image/bannerSea.png');"
     ></div>
 
     <!-- Overlay -->
@@ -15,7 +15,7 @@
 
       <div>
         <h1 class="text-white text-4xl md:text-6xl font-bold">
-          Discover Your Perfect Island Stay
+          Discover Your Perfect Holiday
         </h1>
 
         <p class="text-gray-200 mt-4 text-lg md:text-xl">
@@ -24,9 +24,12 @@
 
         <!-- Button -->
         <div class="mt-6">
-          <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition">
-            Explore Now
-          </button>
+          <router-link to="/hotels">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition">
+              All Hotel view
+            </button>
+          </router-link>
+          
         </div>
       </div>
 

@@ -4,10 +4,11 @@
     <!-- HERO SECTION -->
     <HotelSection />
 
-    <!-- SEARCH CARD -->
-    <div
-      class="w-[90%] md:w-[80%] mx-auto bg-white rounded-3xl shadow-xl p-6 mt-10"
-    >
+
+    
+
+    <!-- search hotel -->
+    <div class="w-[90%] md:w-[80%] mx-auto bg-white rounded-3xl shadow-xl p-6 mt-10">
       <h2 class="text-3xl font-bold text-center mb-2">
         Search Hotels
       </h2>
@@ -25,12 +26,8 @@
             Hotel Name
           </label>
 
-          <input
-            v-model="searchTitle"
-            type="text"
-            placeholder="Enter hotel name..."
-            class="w-full border border-gray-300 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
-          />
+          <input v-model="searchTitle" type="text" placeholder="Enter hotel name..."
+            class="w-full border border-gray-300 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400" />
         </div>
 
         <!-- LOCATION -->
@@ -39,25 +36,21 @@
             Location
           </label>
 
-          <input
-            v-model="searchLocation"
-            type="text"
-            placeholder="Enter location..."
-            class="w-full border border-gray-300 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
-          />
+          <input v-model="searchLocation" type="text" placeholder="Enter location..."
+            class="w-full border border-gray-300 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400" />
         </div>
 
         <!-- BUTTON -->
         <div class="flex items-end">
-          <button
-            class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-2xl font-semibold transition"
-          >
+          <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-2xl font-semibold transition">
             Search Now
           </button>
         </div>
 
       </div>
     </div>
+
+    
 
     <!-- BODY -->
     <div class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 p-4 lg:p-6">
@@ -129,10 +122,7 @@
             Sort
           </p>
 
-          <select
-            v-model="sort"
-            class="w-full border p-2 rounded-xl mb-4 text-sm"
-          >
+          <select v-model="sort" class="w-full border p-2 rounded-xl mb-4 text-sm">
             <option value="">Default</option>
             <option value="priceLow">Price Low → High</option>
             <option value="priceHigh">Price High → Low</option>
@@ -140,10 +130,7 @@
           </select>
 
           <!-- CLEAR -->
-          <button
-            @click="clearFilters"
-            class="w-full border text-gray-500 py-2 rounded-xl hover:bg-gray-50 text-sm"
-          >
+          <button @click="clearFilters" class="w-full border text-gray-500 py-2 rounded-xl hover:bg-gray-50 text-sm">
             Clear Filters
           </button>
 
@@ -161,24 +148,20 @@
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
           <!-- CARD -->
-          <div
-            v-for="item in filteredHotels"
-            :key="item.id"
-            class="bg-white rounded-2xl overflow-hidden border border-none shadow-sm hover:shadow-xl transition group "
-          >
+          <div v-for="item in filteredHotels" :key="item.id"
+            class="bg-white rounded-2xl overflow-hidden border border-none shadow-sm hover:shadow-xl transition group ">
 
             <!-- IMAGE -->
             <div class="relative overflow-hidden h-60">
 
-              <img
-                :src="item.image"
-                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                alt="hotel"
-              />
-
-              <div
-                class="absolute top-3 right-3 bg-white/90 text-xs px-2 py-1 rounded-full shadow"
-              >
+              <img :src="item.image" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                alt="hotel" />
+              
+              <div class="absolute top-3 left-3 bg-white/90 text-xs px-2 py-1 rounded-full shadow opacity-0 group-hover:opacity-100
+                    transition-all duration-800">
+                <i class="bi bi-heart text-blue-500 hover:text-blue-700 "></i>
+              </div>
+              <div class="absolute top-3 right-3 bg-white/90 text-xs px-2 py-1 rounded-full shadow">
                 ⭐ {{ item.rating }}
               </div>
 
@@ -189,13 +172,9 @@
 
               <div>
 
-                <h2 class="font-semibold text-gray-900 text-xl truncate">
+                <h2 class="font-semibold text-gray-700 text-xl truncate">
                   {{ item.name }}
                 </h2>
-
-                <p class="text-sm text-gray-400 mt-2">
-                  📍 {{ item.location }}
-                </p>
 
                 <p class="text-gray-500 text-sm mt-4 line-clamp-3">
                   Beautiful luxury hotel with amazing service and relaxing rooms.
@@ -203,7 +182,7 @@
 
               </div>
 
-              <!-- FOOTER -->
+              <!-- FOOTER card-->
               <div class="flex items-center justify-between mt-5">
 
                 <p class="text-blue-600 font-bold text-lg">
@@ -213,10 +192,8 @@
                   </span>
                 </p>
 
-                <router-link
-                  :to="{ name: 'hotel-detail', params: { id: item.id } }"
-                  class="px-4 py-2 rounded-xl bg-blue-500 text-white hover:bg-blue-600 transition"
-                >
+                <router-link :to="{ name: 'hotel-detail', params: { id: item.id } }"
+                  class="px-4 py-2 rounded-xl bg-blue-500 text-white hover:bg-blue-600 transition">
                   View
                 </router-link>
 
@@ -251,53 +228,84 @@ const sort = ref('')
 const hotels = ref([
   {
     id: 1,
-    name: 'Beach House',
-    location: 'Krabi, Thailand',
-    price: 180,
-    rating: 4.6,
-    image:
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb'
-  },
-
-  {
-    id: 2,
-    name: 'Grand Luxury Hotel',
-    location: 'New York, USA',
-    price: 299,
+    name: 'Single Room',
+    location: 'Mountain Hotel',
+    price: 120,
     rating: 4.8,
     image:
-      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb'
+      './src/assets/image/roomhotel1.png',
+    description: 'A beautiful luxury hotel with ocean view, modern rooms, and excellent service. Perfect for vacation and relaxation.',
   },
-
   {
-    id: 3,
-    name: 'Ocean View Resort',
-    location: 'Bali, Indonesia',
+    id: 2,
+    name: 'Honeymoon room',
+    location: 'Sihanoukville',
     price: 220,
     rating: 4.7,
     image:
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267'
+      './src/assets/image/roomhotel2.png',
+    description: 'Welcome to SkyWayHotel, where comfort meets luxury.',
   },
-
   {
-    id: 4,
-    name: 'Mountain Escape',
-    location: 'Swiss Alps',
-    price: 350,
-    rating: 4.9,
-    image:
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85'
-  },
-
-  {
-    id: 5,
-    name: 'City Lights Hotel',
-    location: 'Tokyo, Japan',
-    price: 199,
+    id: 3,
+    name: 'Double Room',
+    location: 'Mondulkiri',
+    price: 180,
     rating: 4.5,
     image:
-      'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a'
-  }
+      './src/assets/image/roomhotel3.png',
+    description: 'Our modern rooms are designed to give guests a relaxing and peaceful stay.',
+  },
+  {
+    id: 4,
+    name: 'Triple Room',
+    location: 'Siem Reap',
+    price: 250,
+    rating: 4.6,
+    image:
+      './src/assets/image/roomhotel4.png',
+    description: 'Modern boutique hotel near famous tourist attractions.',
+  },
+  {
+    id: 5,
+    name: 'Premium Family Rooml',
+    location: 'Siem Reap',
+    price: 250,
+    rating: 4.6,
+    image:
+      '/src/assets/image/roomhotel5.png',
+    description: 'he hotel also provides clean bathrooms with modern facilities and daily room service.',
+  },
+  {
+    id: 6,
+    name: 'Family Room',
+    location: 'River side',
+    price: 280,
+    rating: 4.3,
+    image:
+      '/src/assets/image/roomhotel6.png',
+    description: 'Each room includes comfortable beds, air conditioning, free Wi-Fi, and a smart TV.',
+  },
+  {
+    id: 7,
+    name: 'Triple Room',
+    location: 'kompot City',
+    price: 110,
+    rating: 4.6,
+    image:
+      '/src/assets/image/roomhotel7.png',
+    description: 'Modern boutique hotel near famous tourist attractions.',
+  },
+  {
+    id: 8,
+    name: 'Ocean View Room',
+    location: 'Near Beach',
+    price: 220,
+    rating: 4.5,
+    image:
+      '/src/assets/image/roomhotel8.png',
+    description: 'SkyWayHotel is the perfect place for vacations, business trips, and family stays.',
+  },
 ])
 
 /* FILTER + SEARCH + SORT */

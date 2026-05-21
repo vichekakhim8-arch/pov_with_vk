@@ -47,11 +47,11 @@
       </div>
     </div>
 
-    <!-- HOTEL RESULT -->
+    <!-- all hotel card -->
     <div class="w-[90%] mx-auto mt-12">
 
       <h2 class="text-2xl font-bold mb-6 text-orange-500 hover:text-blue-500">
-        Hotels Found : {{ filteredHotels.length }} 
+        SkywayHotel-list: {{ filteredHotels.length }}
       </h2>
 
       <div class="flex flex-wrap gap-6 justify-center">
@@ -63,32 +63,29 @@
             class="group bg-white rounded-2xl overflow-hidden border border-none shadow-sm hover:shadow-xl transition block ">
 
             <!-- IMAGE -->
-            <div class="relative overflow-hidden w-full h-[80%]">
+            <div class="relative group overflow-hidden w-full h-[80%]">
 
               <img :src="item.image" class="h-[250px] w-full object-cover group-hover:scale-110 transition duration-500"
                 alt="" />
-                <div class="absolute top-3 left-3 bg-white/90 text-xs px-2 py-1 rounded-full shadow">
-                  <i class="bi bi-heart text-orange-300 hover:text-blue-300"></i>
-                </div>
-                <div class="absolute top-3 right-3 bg-white/90 text-xs px-2 py-1 rounded-full shadow">
-                  ⭐  {{ item.rating }}
+              <div class="absolute top-3 left-3 bg-white/90 text-xs px-2 py-1 rounded-full shadow opacity-0 group-hover:opacity-100
+                    transition-all duration-800">
+                <i class="bi bi-heart text-blue-500 hover:text-blue-700 "></i>
+              </div>
+              <div class="absolute top-3 right-3 bg-white/90 text-xs px-2 py-1 rounded-full shadow">
+                ⭐ {{ item.rating }}
 
               </div>
 
             </div>
 
-            <!-- CONTENT -->
+            <!-- content below card -->
             <div class="p-4 flex flex-col justify-between w-full h-[20%]">
 
               <div>
 
-                <h2 class="font-semibold text-xl truncate text-orange-500 hover:text-blue-500">
+                <h2 class="font-semibold text-xl truncate text-gray-700 ">
                   {{ item.name }}
                 </h2>
-
-                <p class="text-sm text-gray-400 mt-2">
-                  📍 {{ item.location }}
-                </p>
 
                 <p class="text-gray-500 text-sm mt-4 line-clamp-2">
                   {{ item.description }}
@@ -103,7 +100,8 @@
                   <span class="text-gray-400 text-sm">/ night</span>
                 </p>
 
-                <router-link to="/hotels" class="px-4 py-2 rounded-xl bg-blue-500 text-white hover:bg-orange-600 transition">
+                <router-link to="/hotels"
+                  class="px-4 py-2 rounded-xl bg-blue-500 text-white hover:bg-blue-700 transition">
                   View Hotel
                 </router-link>
 
@@ -138,83 +136,83 @@ const searchLocation = ref('')
 const hotels = ref([
   {
     id: 1,
-    name: 'SkyWayHotel',
+    name: 'Single Room',
     location: 'Mountain Hotel',
     price: 120,
     rating: 4.8,
     image:
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945',
+      './src/assets/image/roomhotel1.png',
     description: 'A beautiful luxury hotel with ocean view, modern rooms, and excellent service. Perfect for vacation and relaxation.',
   },
   {
     id: 2,
-    name: 'SkyWayHotel',
+    name: 'Honeymoon room',
     location: 'Sihanoukville',
-    price: 150,
+    price: 220,
     rating: 4.7,
     image:
-      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461',
-    description: 'Beachfront resort with ocean sunset and relaxing rooms.',
+      './src/assets/image/roomhotel2.png',
+    description: 'Welcome to SkyWayHotel, where comfort meets luxury.',
   },
   {
     id: 3,
-    name: 'SkyWayHotel',
+    name: 'Double Room',
     location: 'Mondulkiri',
-    price: 90,
+    price: 180,
     rating: 4.5,
     image:
-      'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa',
-    description: 'Nature resort surrounded by mountains and fresh air.',
+      './src/assets/image/roomhotel3.png',
+    description: 'Our modern rooms are designed to give guests a relaxing and peaceful stay.',
   },
   {
     id: 4,
-    name: 'SkyWayHotel',
+    name: 'Triple Room',
     location: 'Siem Reap',
-    price: 110,
+    price: 250,
     rating: 4.6,
     image:
-      'https://images.unsplash.com/photo-1445019980597-93fa8acb246c',
+      './src/assets/image/roomhotel4.png',
     description: 'Modern boutique hotel near famous tourist attractions.',
   },
   {
     id: 5,
-    name: 'SkyWayHotel',
+    name: 'Premium Family Rooml',
     location: 'Siem Reap',
-    price: 110,
+    price: 250,
     rating: 4.6,
     image:
-      '/src/assets/card5.png',
-    description: 'Modern boutique hotel near famous tourist attractions.',
+      '/src/assets/image/roomhotel5.png',
+    description: 'he hotel also provides clean bathrooms with modern facilities and daily room service.',
   },
   {
     id: 6,
-    name: 'SkyWayHotel',
+    name: 'Family Room',
     location: 'River side',
-    price: 110,
-    rating: 4.6,
+    price: 280,
+    rating: 4.3,
     image:
-      'https://images.unsplash.com/photo-1445019980597-93fa8acb246c',
-    description: 'Modern boutique hotel near famous tourist attractions.',
+      '/src/assets/image/roomhotel6.png',
+    description: 'Each room includes comfortable beds, air conditioning, free Wi-Fi, and a smart TV.',
   },
   {
     id: 7,
-    name: 'SkyWayHotel',
+    name: 'Triple Room',
     location: 'kompot City',
     price: 110,
     rating: 4.6,
     image:
-      '',
+      '/src/assets/image/roomhotel7.png',
     description: 'Modern boutique hotel near famous tourist attractions.',
   },
   {
     id: 8,
-    name: 'SkyWayHotel',
+    name: 'Ocean View Room',
     location: 'Near Beach',
-    price: 199,
+    price: 220,
     rating: 4.5,
     image:
-      'https://images.unsplash.com/photo-1445019980597-93fa8acb246c',
-    description: 'Modern boutique hotel near famous tourist attractions.',
+      '/src/assets/image/roomhotel8.png',
+    description: 'SkyWayHotel is the perfect place for vacations, business trips, and family stays.',
   },
 ])
 

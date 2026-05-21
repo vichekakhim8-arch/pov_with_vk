@@ -6,11 +6,8 @@
 
       <!-- MAIN IMAGE -->
       <div class="relative h-[350px] md:h-[450px] w-full">
-        <img
-          :src="selectedImage"
-          class="w-full h-full object-cover transition duration-300"
-          alt="hotel"
-        />
+        <img :src="selectedImage" class="w-full h-full object-cover transition duration-300"
+          alt="hotel" />
         <div class="absolute inset-0 bg-black/40"></div>
 
         <!-- TITLE OVER IMAGE -->
@@ -24,21 +21,20 @@
         </div>
       </div>
 
+    
       <!-- THUMBNAILS -->
       <div class="flex gap-3 mt-3 px-4 md:px-0 max-w-6xl mx-auto">
-        <img
-          v-for="(img, index) in images"
+        <img v-for="(img, index) in images" ref=""
           :key="index"
           :src="img"
           @click="selectedImage = img"
           class="w-24 h-20 object-cover rounded-lg cursor-pointer border-2 transition"
           :class="selectedImage === img
-            ? 'border-blue-500 scale-105'
-            : 'border-transparent opacity-70 hover:opacity-100'"
-        />
+            ? 'border-blue-500 scale-105' : 'border-transparent opacity-70 hover:opacity-100'"/>
       </div>
 
     </div>
+
 
    <!-- content -->
 <div class="max-w-6xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -77,7 +73,7 @@
     </div>
 
   <!-- PRICE + BOOKING -->
-<div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl shadow-md sticky top-6 border border-blue-100">
+<div class=" bg-white p-6 rounded-2xl shadow-sm ">
 
   <!-- badge -->
   <div class="flex items-center justify-between">
@@ -106,16 +102,16 @@
   </div>
 
   <!-- buttons -->
- <router-link
-  to="/booking"
-  class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold shadow-md transition"
->
-  Book Now
+ <router-link to="/booking" class="block text-center w-full mt-6 bg-blue-600 hover:bg-blue-700
+       text-white py-3 rounded-xl font-semibold shadow-md transition">
+
+       Booking Now
+
 </router-link>
 
  
 
-</div>>
+</div>
 
   </div>
 
@@ -175,10 +171,10 @@ const route = useRoute()
 const hotels = [
   {
     id: 1,
-    name: "Sunset Luxury Resort",
-    location: "Phnom Penh, Cambodia",
-    rating: 4.7,
-    price: 120,
+    name: "skyWay Hotel",
+    location: "Kompot, Cambodia",
+    rating: 4.8,
+    price: 220,
 
     description:
       "A beautiful luxury hotel with ocean view, modern rooms, and excellent service. Perfect for vacation and relaxation.",
@@ -219,9 +215,9 @@ const hotels = [
     ],
 
     images: [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945",
       "https://images.unsplash.com/photo-1501117716987-c8e1ecb210c7",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945"
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4"
     ]
   },
 
@@ -245,9 +241,9 @@ const hotels = [
     ],
 
     images: [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
       "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-      "https://images.unsplash.com/photo-1501117716987-c8e1ecb210c7"
+      "https://images.unsplash.com/photo-1501117716987-c8e1ecb210c7",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4"
     ]
   }
 ]
