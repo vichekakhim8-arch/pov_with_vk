@@ -1,4 +1,11 @@
 <template>
+  <router-link
+      to="/"
+      class="m-3 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-900 text-white hover:bg-gray-800 transition"
+    >
+      <i class="bi bi-arrow-left"></i>
+      Back
+    </router-link>
   <div class="w-full min-h-screen bg-gray-100 flex justify-center items-center p-4">
 
     <div class="w-full max-w-5xl bg-white rounded-2xl shadow-lg overflow-hidden grid md:grid-cols-2">
@@ -76,14 +83,16 @@
         </div>
 
         <!-- ORDER BUTTON -->
-        <button
+        <router-link
+          to="/payment"
+          
           @click="orderNow"
           class="mt-8 w-full bg-gradient-to-r from-blue-500 to-indigo-600
                 text-white py-3 rounded-xl font-bold shadow-lg
-                hover:scale-105 transition"
+                hover:scale-105 transition text-center"
         >
           Order Now
-        </button>
+        </router-link>
 
       </div>
     </div>

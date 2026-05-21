@@ -111,24 +111,26 @@
 
           <h2 class="mt-4 text-xl font-bold">Vicheka</h2>
           <p class="text-gray-500">Frontend Developer</p>
-
-        
-
-          <div class="mt-4 flex justify-center gap-3">
+          
+          
+          
+          <div class="mt-4 flex justify-center gap-3 flex-wrap">
             <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs">Vue</span>
             <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs">Tailwind</span>
+            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs">Router</span>
+            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs">localStorage</span>
             <span class="px-3 py-1 bg-green-100 text-red-600 rounded-full text-xs">css</span>
           </div>
-
+          
         </div>
-
+        
         <!-- MEMBER 2 -->
         <div class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition">
 
-          <div class="border rounded-full w-30 h-30 flex items-center justify-center mx-auto">
+           <div class="border-3 rounded-full w-30 h-30 flex items-center justify-center mx-auto border-red-900 ">
             <img
-              src="https://i.pravatar.cc/150?img=12"
-              class=" rounded-full mx-auto border-4 "
+              src="/src/assets/image/pov.png"
+              class=" rounded-full mx-auto border-4 w-full h-full object-cover"
             />
           </div>
 
@@ -136,10 +138,12 @@
           <p class="text-gray-500">Frontend Developer</p>
 
         
-
-          <div class="mt-4 flex justify-center gap-3">
+          
+          <div class="mt-4 flex justify-center gap-3 flex-wrap">
             <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-xs">Vue</span>
             <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs">Tailwind CSS</span>
+            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs">Router</span>
+            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs">localStorage</span>
             <span class="px-3 py-1 bg-purple-100 text-red-600 rounded-full text-xs">css</span>
           </div>
 

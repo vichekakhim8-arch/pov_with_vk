@@ -190,6 +190,7 @@
   </div>
 </template>
 
+
 <script setup>
 import { ref, computed } from "vue"
 import { useRouter } from "vue-router"
@@ -201,15 +202,75 @@ const router = useRouter()
 const errorMessage = ref("")
 
 /* HOTEL */
-const hotel = ref({
-  name: "Luxury Hotel",
-  location: "Phnom Penh",
-  price: 120,
-  image:
-    "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-  description:
-    "Luxury hotel with swimming pool and beautiful city view."
-})
+const hotels = ref([
+  {
+    id: 1,
+    name: 'Single Room',
+    price: 120,
+    location: 'Kampot',
+    image: '/src/assets/image/roomhotel1.png',
+    description: 'Luxury room with comfort'
+  },
+  {
+    id: 2,
+    name: 'Honeymoon room',
+    price: 220,
+    location: 'Kampot',
+    image: '/src/assets/image/roomhotel2.png',
+    description: 'Romantic stay'
+  },
+  {
+    id: 3,
+    name: 'Double Room',
+    price: 180,
+    location: 'Kampot',
+    image: '/src/assets/image/roomhotel3.png',
+    description: 'Modern design'
+  },
+  {
+    id: 4,
+    name: 'Triple Room',
+    price: 250,
+    location: 'Kampot',
+    image: '/src/assets/image/roomhotel4.png',
+    description: 'Spacious room'
+  },
+  {
+    id: 5,
+    name: 'Premium Family Room',
+    price: 250,
+    location: 'Kampot',
+    image: '/src/assets/image/roomhotel5.png',
+    description: 'Family comfort'
+  },
+  {
+    id: 6,
+    name: 'Family Room',
+    price: 280,
+    location: 'Kampot',
+    image: '/src/assets/image/roomhotel6.png',
+    description: 'Big family room'
+  },
+  {
+    id: 7,
+    name: 'Triple Room',
+    price: 110,
+    location: 'Kompot',
+    image: '/src/assets/image/roomhotel7.png',
+    description: 'Budget stay'
+  },
+  {
+    id: 8,
+    name: 'Ocean View Room',
+    price: 220,
+    location: 'Near Beach',
+    image: '/src/assets/image/roomhotel8.png',
+    description: 'Sea view'
+  }
+])
+
+/* ✅ FIX IMAGE */
+const hotel = computed(() => hotels.value[0])
 
 /* GUEST INFO */
 const firstName = ref("")
@@ -263,7 +324,6 @@ const saveBooking = () => {
 
   errorMessage.value = ""
 
-  /* VALIDATION */
   if (
     !firstName.value ||
     !lastName.value ||
@@ -300,7 +360,6 @@ const saveBooking = () => {
     JSON.stringify(bookings)
   )
 
-  /* GO PAYMENT */
   router.push("/payment")
 }
 </script>

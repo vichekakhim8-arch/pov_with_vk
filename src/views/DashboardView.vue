@@ -1,28 +1,30 @@
 <template>
-  <div class="w-full h-screen bg-gray-100 flex">
+  <div class="min-h-screen bg-gray-100 flex flex-col lg:flex-row">
 
     <!-- LEFT SIDEBAR -->
-    <div class="w-[320px] h-full bg-white shadow-lg p-8 flex flex-col">
+    <div
+      class="w-full lg:w-[320px] bg-white shadow-lg p-6 lg:p-8 flex flex-col"
+    >
 
       <!-- TITLE -->
       <div>
         <h1
-          class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"
+          class="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"
         >
           My Dashboard
         </h1>
 
-        <p class="text-gray-500 mt-2">
+        <p class="text-gray-500 mt-2 text-sm lg:text-base">
           Manager bookings system
         </p>
       </div>
 
       <!-- PROFILE -->
-      <div class="bg-gray-50 rounded-3xl shadow-md p-6 mt-10">
+      <div class="bg-gray-50 rounded-3xl shadow-md p-6 mt-8">
 
         <div class="flex items-center gap-4">
 
-          <div class="w-24 h-24 rounded-full overflow-hidden">
+          <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden">
             <img
               class="w-full h-full object-cover"
               src="https://i.pinimg.com/736x/f0/ae/91/f0ae91b8f72db7efbef0d3946f59b62f.jpg"
@@ -31,11 +33,11 @@
           </div>
 
           <div>
-            <h2 class="text-xl font-semibold">
+            <h2 class="text-lg lg:text-xl font-semibold">
               GENZE
             </h2>
 
-            <p class="text-gray-500 text-sm">
+            <p class="text-gray-500 text-xs lg:text-sm break-all">
               komslkeey@ITsava.com
             </p>
           </div>
@@ -45,14 +47,15 @@
       </div>
 
       <!-- MENU -->
-      <div class="mt-10 space-y-3 text-lg">
+      <div class="mt-8 space-y-3 text-base lg:text-lg">
 
-        <router-link to="/hotels"
+        <router-link
+          to="/hotels"
           class="w-full text-center block bg-blue-50 text-blue-600 px-4 py-3 rounded-xl"
         >
           <i class="bi bi-calendar-check mr-2"></i>
           Bookings
-      </router-link>
+        </router-link>
 
         <button
           class="w-full hover:bg-gray-100 px-4 py-3 rounded-xl"
@@ -73,7 +76,7 @@
     </div>
 
     <!-- RIGHT CONTENT -->
-    <div class="flex-1 h-full overflow-y-auto p-6">
+    <div class="flex-1 overflow-y-auto p-4 lg:p-6">
 
       <div class="max-w-7xl mx-auto">
 
@@ -84,7 +87,7 @@
 
         <!-- TOP CARDS -->
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
+          class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6"
         >
 
           <!-- TOTAL CUSTOMERS -->
@@ -151,17 +154,17 @@
               v-model="search"
               type="text"
               placeholder="Search customer..."
-              class="border px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+              class="border px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 w-full"
             >
 
             <!-- FILTER -->
             <select
               v-model="roomFilter"
-              class="border px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+              class="border px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 w-full"
             >
               <option value="">All Rooms</option>
-              <option value="Single">Single</option>
-              <option value="Double">Double</option>
+              <option value="Single Room">Single Room</option>
+              <option value="Double Room">Double Room</option>
               <option value="VIP">VIP</option>
             </select>
 
@@ -276,12 +279,12 @@
                   <!-- ACTION -->
                   <td class="px-6 py-4">
 
-                    <div class="flex items-center justify-center gap-2">
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-2">
 
                       <!-- EDIT -->
                       <button
                         @click="editBooking(i)"
-                        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-xl transition"
+                        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-xl transition w-full sm:w-auto"
                       >
                         <i class="bi bi-pencil-square mr-1"></i>
                         Edit
@@ -290,7 +293,7 @@
                       <!-- DELETE -->
                       <button
                         @click="deleteBooking(i)"
-                        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl transition"
+                        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl transition w-full sm:w-auto"
                       >
                         <i class="bi bi-trash mr-1"></i>
                         Delete

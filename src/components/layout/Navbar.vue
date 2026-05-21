@@ -20,20 +20,19 @@
             v-for="link in navLinks"
             :key="link.name"
             :to="link.path"
-            class="relative font-medium  transition duration-300 pb-1"
+            class="relative font-medium transition duration-300 pb-1"
             :class="isActive(link.path)
               ? 'text-blue-600'
               : 'text-gray-700 hover:text-blue-600'"
           >
+
             {{ link.name }}
 
             <!-- UNDERLINE ANIMATION -->
-            <span
-              class="absolute left-0 -bottom-0.5 h-[2px] bg-blue-600 transition-all duration-300"
-              :class="isActive(link.path)
-                ? 'w-full'
-                : 'w-0 group-hover:w-full'"
+            <span class="absolute left-0 -bottom-0.5 h-[2px] bg-blue-600 transition-all duration-300"
+              :class="isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'"
             ></span>
+
           </RouterLink>
 
         </div>
@@ -58,11 +57,8 @@
         </div>
 
         <!-- mobile button  -->
-        <button
-          @click="mobileMenu = !mobileMenu"
-          class="md:hidden text-3xl text-gray-700"
-        >
-          ☰
+        <button @click="mobileMenu = !mobileMenu" class="md:hidden text-3xl text-gray-700">
+          ☰ 
         </button>
 
       </div>
@@ -91,10 +87,7 @@
             Menu
           </h2>
 
-          <button
-            @click="mobileMenu = false"
-            class="text-2xl"
-          >
+          <button @click="mobileMenu = false" class="text-2xl">
             ✕
           </button>
 
@@ -148,30 +141,14 @@ import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 const mobileMenu = ref(false)
-
 const route = useRoute()
 
 const navLinks = [
-  {
-    name: 'Home',
-    path: '/'
-  },
-  {
-    name: 'Hotels',
-    path: '/hotels'
-  },
-  {
-    name: 'About',
-    path: '/about'
-  },
-  {
-    name: 'Contact',
-    path: '/contact'
-  },
-  {
-    name: 'Dashboard',
-    path: '/dashboard'
-  }
+  { name: 'Home', path: '/' },
+  { name: 'Hotels', path: '/hotels' },
+  { name: 'About', path: '/about' },
+  { name: 'Contact', path: '/contact' },
+  { name: 'Dashboard', path: '/dashboard' }
 ]
 
 const isActive = (path) => {
