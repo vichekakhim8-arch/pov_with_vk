@@ -1,5 +1,13 @@
 <template>
+  
   <div class="min-h-screen bg-gray-50 p-6">
+    <router-link
+        to="/hotels"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-900 text-white hover:bg-gray-800 transition"
+      >
+        <i class="bi bi-arrow-left"></i>
+        Back
+      </router-link>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
 
@@ -13,13 +21,13 @@
         <!-- ERROR CARD -->
         <div
           v-if="errorMessage"
-          class="bg-red-100 border border-red-300 text-red-700 p-4 rounded-2xl"
+          class="bg-red-100  border-red-300 text-red-700 p-4 rounded-2xl"
         >
           {{ errorMessage }}
         </div>
 
         <!-- GUEST INFO -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border space-y-4">
+        <div class="bg-white p-6 rounded-2xl shadow-lg space-y-4">
 
           <h2 class="font-semibold text-gray-800">
             Guest Information
@@ -56,7 +64,7 @@
         </div>
 
         <!-- DATES -->
-        <div class="bg-white p-6 rounded-2xl border shadow-sm">
+        <div class="bg-white p-6 rounded-2xl  shadow-lg ">
 
           <h2 class="font-semibold mb-4">
             Stay Dates
@@ -103,7 +111,7 @@
       <div class="space-y-6">
 
         <!-- HOTEL CARD -->
-        <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
+        <div class="bg-white rounded-2xl  overflow-hidden shadow-lg">
 
           <!-- IMAGE -->
           <img
@@ -120,7 +128,7 @@
             </h2>
 
             <p class="text-gray-500 mt-1">
-              📍 {{ hotel.location }}
+              {{ hotel.location }}
             </p>
 
             <p class="text-sm text-gray-600 mt-3">

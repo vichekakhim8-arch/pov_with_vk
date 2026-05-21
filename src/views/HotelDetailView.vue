@@ -40,7 +40,7 @@
 
     </div>
 
-   <!-- CONTENT -->
+   <!-- content -->
 <div class="max-w-6xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
 
   <!-- LEFT SIDE -->
@@ -113,16 +113,16 @@
   Book Now
 </router-link>
 
- 
 
-</div>>
+
+</div>
 
   </div>
 
   <!-- RIGHT SIDE -->
   <div class="space-y-6">
 
-   <!-- LOCATION -->
+  <!-- LOCATION -->
 <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 sticky top-0 left-0 z-10">
 
   <div class="flex items-center gap-2 mb-3">

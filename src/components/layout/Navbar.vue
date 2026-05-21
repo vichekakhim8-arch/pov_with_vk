@@ -10,7 +10,7 @@
           to="/"
           class="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent"
         >
-          <sapn class="text-4xl text-red-600">S</sapn>ky<span class="text-yellow-500">Way</span>Hotel
+          <span class="text-4xl text-red-600">S</span>ky<span class="text-yellow-500">Way</span>Hotel
         </RouterLink>
 
         <!-- Menu list -->
@@ -43,14 +43,14 @@
 
           <RouterLink
             to="/login"
-            class="px-4 py-2 rounded-xl border border-blue-600 text-blue-600 hover:bg-blue-50 transition duration-300"
+            class="px-6 py-2 hover:bg-red-600 hover:text-white rounded-xl border border-blue-600 text-blue-600 transition duration-300"
           >
             Login
           </RouterLink>
 
           <RouterLink
             to="/register"
-            class="px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg transition duration-300"
+            class="px-6 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg transition duration-300"
           >
             Register
           </RouterLink>
@@ -165,12 +165,12 @@ const navLinks = [
     path: '/about'
   },
   {
-    name: 'Dashboard',
-    path: '/dashboard'
-  },
-  {
     name: 'Contact',
     path: '/contact'
+  },
+  {
+    name: 'Dashboard',
+    path: '/dashboard'
   }
 ]
 

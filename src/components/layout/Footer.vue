@@ -1,7 +1,7 @@
 <!-- src/components/layout/Footer.vue -->
 
 <template>
-  <footer class="bg-gray-900 text-white mt-10">
+  <footer class="bg-gray-500 text-white mt-10 border ">
 
     <div class="max-w-7xl mx-auto px-4 py-10">
 

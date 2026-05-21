@@ -5,6 +5,13 @@
     <HotelSection />
 
     <!-- SEARCH CARD -->
+    <router-link
+        to="/"
+        class="m-3 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-900 text-white hover:bg-gray-800 transition"
+      >
+        <i class="bi bi-arrow-left"></i>
+        Back
+      </router-link>
     <div
       class="w-[90%] md:w-[80%] mx-auto bg-white rounded-3xl shadow-xl p-6 mt-10"
     >
@@ -60,16 +67,12 @@
     </div>
 
     <!-- BODY -->
-    <div
-      class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 p-4 lg:p-6"
-    >
+    <div class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 p-4 lg:p-6">
 
-      <!-- SIDEBAR -->
+      <!-- sidebar -->
       <div class="w-full lg:w-[240px] flex-shrink-0">
 
-        <div
-          class="bg-white p-4 sm:p-5 rounded-2xl border shadow-sm sticky top-4"
-        >
+        <div class="bg-white p-4 sm:p-5 rounded-2xl border shadow-sm sticky top-4">
 
           <h2 class="text-lg sm:text-xl font-serif font-medium mb-5">
             Filters
@@ -154,7 +157,7 @@
         </div>
       </div>
 
-      <!-- HOTELS -->
+      <!-- HOTELS card -->
       <div class="flex-1 min-w-0">
 
         <p class="text-gray-500 text-sm mb-4">
@@ -168,7 +171,7 @@
           <div
             v-for="item in filteredHotels"
             :key="item.id"
-            class="bg-white rounded-2xl overflow-hidden border shadow-sm hover:shadow-xl transition group"
+            class="bg-white rounded-2xl overflow-hidden border border-none shadow-sm hover:shadow-xl transition group "
           >
 
             <!-- IMAGE -->

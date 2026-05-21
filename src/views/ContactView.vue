@@ -7,9 +7,12 @@
       <!-- LEFT SIDE -->
       <div class="bg-white rounded-2xl shadow-lg p-8">
 
-        <h1 class="text-4xl font-bold text-blue-600">
-          <span class="text-5xl text-yellow-500">C</span>ontact Ad<span class="text-2xl text-red-600">min</span>
-        </h1>
+        <h1 class="text-4xl font-bold tracking-wide">
+          <span class="text-5xl text-yellow-500 animate-bounce inline-block">C</span>
+          <span class="text-blue-600">ontact</span>
+          <span class="text-pink-500 hover:rotate-6 inline-block transition"> Ad</span>
+          <span class="text-2xl text-red-600 animate-pulse">min</span>
+      </h1>
 
         <p class="text-gray-500 mt-3">
           We'd love to hear from you. Send us a message and we’ll respond as soon as possible.
@@ -60,7 +63,7 @@
                 Email
               </h3>
 
-              <p class="text-gray-500">
+              <p class="text-gray-500 hover:text-blue-500 transition duration-500 hover:underline cursor-pointer">
                 adminsava@gmail.com
               </p>
             </div>
@@ -70,10 +73,15 @@
 
         <!-- MAP -->
         <div class="mt-8 rounded-2xl overflow-hidden">
-          <img
-            src="https://maps.googleapis.com/maps/api/staticmap?center=Phnom+Penh,Cambodia&zoom=13&size=600x300&maptype=roadmap&markers=color:red%7Clabel:A%7CPhnom+Penh,Cambodia"
-            class="w-full h-56 object-cover"
-          />
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125079.71693775736!2d104.82459216192369!3d11.57040464747404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513dc76a6be3%3A0x9c010ee85ab525bb!2sPhnom%20Penh!5e0!3m2!1sen!2skh!4v1779198740795!5m2!1sen!2skh"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
 
       </div>

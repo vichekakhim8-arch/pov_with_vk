@@ -83,13 +83,74 @@
         </div>
       </div>
 
-      <!-- FOOTER -->
-      <div class="text-center text-gray-400 text-sm">
-        © 2026 Skywayhotel Booking System. All rights reserved.  
-        Made for learning purpose | Developed by<span class="hover:text-blue-700 transition-all duration-200 hover:underline"> Vicheka & Sery Pov</span> 
+      
+
+    </div>
+
+     <div class="min-h-auto py-10 bg-gray-100 flex items-center justify-center  m-4">
+
+    <div class="w-full max-w-4xl">
+
+      <!-- TITLE -->
+      <h1 class="text-3xl font-bold text-center mb-10 text-gray-800">
+        Team Work
+      </h1>
+
+      <!-- TEAM GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- MEMBER 1 -->
+        <div class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition">
+
+          <div class="border-3 rounded-full w-30 h-30 flex items-center justify-center mx-auto border-red-900 ">
+            <img
+              src="/src/assets/image/mypic.png"
+              class=" rounded-full mx-auto border-4 w-full h-full object-cover"
+            />
+          </div>
+
+          <h2 class="mt-4 text-xl font-bold">Vicheka</h2>
+          <p class="text-gray-500">Frontend Developer</p>
+
+        
+
+          <div class="mt-4 flex justify-center gap-3">
+            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs">Vue</span>
+            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs">Tailwind</span>
+            <span class="px-3 py-1 bg-green-100 text-red-600 rounded-full text-xs">css</span>
+          </div>
+
+        </div>
+
+        <!-- MEMBER 2 -->
+        <div class="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition">
+
+          <div class="border rounded-full w-30 h-30 flex items-center justify-center mx-auto">
+            <img
+              src="https://i.pravatar.cc/150?img=12"
+              class=" rounded-full mx-auto border-4 "
+            />
+          </div>
+
+          <h2 class="mt-4 text-xl font-bold">Sery Pov</h2>
+          <p class="text-gray-500">Frontend Developer</p>
+
+        
+
+          <div class="mt-4 flex justify-center gap-3">
+            <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-xs">Vue</span>
+            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs">Tailwind CSS</span>
+            <span class="px-3 py-1 bg-purple-100 text-red-600 rounded-full text-xs">css</span>
+          </div>
+
+        </div>
+
       </div>
 
     </div>
+    
+  </div>
+
   </div>
 </template>
 

@@ -5,14 +5,17 @@
     <div class="relative w-full max-w-md rounded-2xl p-[2px] overflow-hidden">
 
       <!-- ANIMATED BORDER -->
-      <div class="absolute  -inset-15 animate-spin-slow bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+      <div
+        class="absolute inset-2 animate-spin-slow bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+      ></div>
 
       <!-- REGISTER CARD -->
       <div class="relative bg-white rounded-2xl p-8">
 
         <!-- TITLE -->
-      
-        <h1 class="text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent">
+        <h1
+          class="text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"
+        >
           Create Account
         </h1>
 
@@ -25,122 +28,74 @@
 
           <!-- NAME -->
           <div>
-
             <label class="text-sm font-medium text-gray-700">
               Full Name
             </label>
 
-            <div class="relative mt-1">
+            <input
+              v-model="form.name"
+              type="text"
+              placeholder="Enter your name"
+              class="w-full px-4 py-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-400"
+              :class="errors.name ? 'border-red-500' : 'border-gray-300'"
+            />
 
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                
-              </span>
-
-              <input
-                v-model="form.name"
-                type="text"
-                placeholder="Enter your name"
-                class="w-full pl-10 pr-4 py-2 border rounded-xl outline-none"
-                :class="errors.name ? 'border-red-500' : 'border-gray-300'"
-              />
-
-            </div>
-
-            <p
-              v-if="errors.name"
-              class="text-red-500 text-sm mt-1"
-            >
+            <p v-if="errors.name" class="text-red-500 text-sm mt-1">
               {{ errors.name }}
             </p>
-
           </div>
 
           <!-- EMAIL -->
           <div>
-
             <label class="text-sm font-medium text-gray-700">
               Email
             </label>
 
-            <div class="relative mt-1">
+            <input
+              v-model="form.email"
+              type="email"
+              placeholder="Enter your email"
+              class="w-full px-4 py-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-400"
+              :class="errors.email ? 'border-red-500' : 'border-gray-300'"
+            />
 
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                
-              </span>
-
-              <input
-                v-model="form.email"
-                type="email"
-                placeholder="Enter your email"
-                class="w-full pl-10 pr-4 py-2 border rounded-xl outline-none"
-                :class="errors.email ? 'border-red-500' : 'border-gray-300'"
-              />
-
-            </div>
-
-            <p
-              v-if="errors.email"
-              class="text-red-500 text-sm mt-1"
-            >
+            <p v-if="errors.email" class="text-red-500 text-sm mt-1">
               {{ errors.email }}
             </p>
-
           </div>
 
           <!-- PASSWORD -->
           <div>
-
             <label class="text-sm font-medium text-gray-700">
               Password
             </label>
 
-            <div class="relative mt-1">
+            <input
+              v-model="form.password"
+              type="password"
+              placeholder="Enter your password"
+              class="w-full px-4 py-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-400"
+              :class="errors.password ? 'border-red-500' : 'border-gray-300'"
+            />
 
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                
-              </span>
-
-              <input
-                v-model="form.password"
-                type="password"
-                placeholder="Enter your password"
-                class="w-full pl-10 pr-4 py-2 border rounded-xl outline-none"
-                :class="errors.password ? 'border-red-500' : 'border-gray-300'"
-              />
-
-            </div>
-
-            <p
-              v-if="errors.password"
-              class="text-red-500 text-sm mt-1"
-            >
+            <p v-if="errors.password" class="text-red-500 text-sm mt-1">
               {{ errors.password }}
             </p>
-
           </div>
 
           <!-- CONFIRM PASSWORD -->
           <div>
-
             <label class="text-sm font-medium text-gray-700">
               Confirm Password
             </label>
 
-            <div class="relative mt-1">
-
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                
-              </span>
-
-              <input
-                v-model="form.confirmPassword"
-                type="password"
-                placeholder="Confirm your password"
-                class="w-full pl-10 pr-4 py-2 border rounded-xl outline-none"
-                :class="errors.confirmPassword ? 'border-red-500' : 'border-gray-300'"
-              />
-
-            </div>
+            <input
+              v-model="form.confirmPassword"
+              type="password"
+              placeholder="Confirm your password"
+              class="w-full px-4 py-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-400"
+              :class="errors.confirmPassword ? 'border-red-500' : 'border-gray-300'"
+            />
 
             <p
               v-if="errors.confirmPassword"
@@ -148,34 +103,69 @@
             >
               {{ errors.confirmPassword }}
             </p>
-
           </div>
 
           <!-- BUTTON -->
           <button
             type="submit"
-            class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-xl font-semibold transition"
+            :disabled="loading"
+            class="w-full bg-blue-500 hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed text-white py-2 rounded-md font-semibold transition duration-300"
           >
-            Register
+            <span v-if="!loading">
+              Register
+            </span>
+
+            <span
+              v-else
+              class="flex items-center justify-center gap-2"
+            >
+              <svg
+                class="animate-spin h-5 w-5"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  fill="none"
+                />
+
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                />
+              </svg>
+
+              Loading...
+            </span>
           </button>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
+          <!-- SOCIAL BUTTONS -->
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4"
+          >
+            <button
+              type="button"
+              class="w-full sm:w-auto border py-2 px-7 rounded-md hover:bg-gray-50 transition"
+            >
+              Google Account
+            </button>
 
-          <button class="w-full sm:w-auto border py-2 px-7 rounded-sm hover:bg-gray-50 transition">
-            Google Account
-          </button>
-
-          <button class="w-full sm:w-auto bg-blue-500 py-2 px-7 rounded-sm text-white hover:bg-blue-600 transition">
-            Facebook Account
-          </button>
-
-</div>
-
+            <button
+              type="button"
+              class="w-full sm:w-auto bg-blue-500 py-2 px-7 rounded-md text-white hover:bg-blue-600 transition"
+            >
+              Facebook Account
+            </button>
+          </div>
         </form>
 
         <!-- LOGIN LINK -->
         <p class="text-center text-sm text-gray-500 mt-4">
-
           Already have an account?
 
           <router-link
@@ -184,21 +174,19 @@
           >
             Login
           </router-link>
-
         </p>
-
       </div>
-
     </div>
-
   </div>
 </template>
 
 <script setup>
-import { reactive } from "vue"
+import { reactive, ref } from "vue"
 import { useRouter } from "vue-router"
 
 const router = useRouter()
+
+const loading = ref(false)
 
 const form = reactive({
   name: "",
@@ -214,8 +202,7 @@ const errors = reactive({
   confirmPassword: ""
 })
 
-const handleRegister = () => {
-
+const handleRegister = async () => {
   // RESET ERRORS
   errors.name = ""
   errors.email = ""
@@ -257,16 +244,28 @@ const handleRegister = () => {
     return
   }
 
-  // SUCCESS
-  console.log("Register Data:", form)
+  loading.value = true
 
-  router.push("/login")
+  try {
+    // FAKE API CALL
+    await new Promise((resolve) =>
+      setTimeout(resolve, 1500)
+    )
+
+    console.log("Register Data:", form)
+
+    // REDIRECT TO HOME
+    router.push("/")
+  } catch (error) {
+    console.log(error)
+  } finally {
+    loading.value = false
+  }
 }
 </script>
 
 <style>
 @keyframes spin-slow {
-
   0% {
     transform: rotate(0deg);
   }

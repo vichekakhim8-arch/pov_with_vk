@@ -10,7 +10,8 @@ import RegisterView from '../views/RegisterView.vue'
 import DashboardView from '../views/DashboardView.vue'
 import AboutView from '../views/AboutView.vue'
 import ContactView from '../views/ContactView.vue'
-
+import FooddetailView from '../views/FooddetailView.vue'
+import DrinkView from '../views/DrinkView.vue'
 const routes = [
   {
     path: '/',
@@ -71,7 +72,17 @@ const routes = [
     name: 'contact',
     component: ContactView
 
-  }
+  },
+{
+  path: '/Fooddetail',
+  name: 'Fooddetail',
+  component: FooddetailView
+},
+{
+  path: '/drink',
+  name: 'drink-detail',
+  component: DrinkView
+}
   
 ]
 
